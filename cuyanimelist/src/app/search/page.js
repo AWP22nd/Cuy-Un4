@@ -1,7 +1,18 @@
-export default function Page() {
+// export default function Page() {
+//     return (
+//         <div>
+//             <h1>Search Page</h1>
+//         </div>
+//     );
+// }
+
+const Page = () => {
     return (
-        <div>
+        <>
             <h1>Search Page</h1>
-        </div>
+            <p>This is the search page.</p>
+        </>
     );
-}
+};
+
+export default Page;
