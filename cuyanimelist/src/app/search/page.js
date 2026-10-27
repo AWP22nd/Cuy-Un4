@@ -1,10 +1,17 @@
-const Page = () => {
-    return (
-        <>
-            <h1>Search Page</h1>
-            <p>This is the search page.</p>
-        </>
-    );
+import AnimeList from "@/app/components/AnimeList";
+
+const Home = async () => {
+
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime`)
+  const anime = await response.json()
+  console.log(anime)
+
+  return (
+    <div>
+      <h1>Most Popular Anime</h1>
+      <AnimeList />
+    </div>
+  );
 };
 
-export default Page;
+export default Home;
