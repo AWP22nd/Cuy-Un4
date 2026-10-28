@@ -1,10 +1,17 @@
 import AnimeList from "@/app/components/AnimeList";
 
-export default function Home() {
+const Home = async () => {
+
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}top/anime`)
+  const anime = await response.json()
+  console.log(anime.data)
+
   return (
     <div>
-      <h1>Cuy-AnimeList</h1>
+      <h1>Most Popular Anime</h1>
       <AnimeList />
     </div>
   );
 };
+
+export default Home;
