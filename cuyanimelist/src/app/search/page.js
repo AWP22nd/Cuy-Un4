@@ -4,12 +4,20 @@ const Home = async () => {
 
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime`)
   const anime = await response.json()
-  console.log(anime)
 
   return (
     <div>
       <h1>Most Popular Anime</h1>
-      <AnimeList />
+      <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-2">
+      {anime.data.map((data) => {
+        // console.log(data.title)
+      return (
+        <div key={data.mal_id} className="shadow-md" >
+          <AnimeList title={data.title} images={data.images.webp.image_url} />
+        </div>
+      )
+      })}
+      </div>
     </div>
   );
 };
