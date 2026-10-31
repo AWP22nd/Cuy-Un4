@@ -7,19 +7,6 @@ const nextConfig = {
         hostname: 'placehold.co',
         port: '',
       },
-      {
-        protocol: 'https',
-        hostname: 's4.anilist.co',
-        port: '',
-      },
-    ],
-    // Anilist CDN
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 's4.anilist.co',
-        port: '',
-      },
     ],
   },
   /* config options here */
