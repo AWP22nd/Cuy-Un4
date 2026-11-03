@@ -13,12 +13,6 @@ const Home = async () => {
         <Header title="Most Popular Anime" linkHref="/popular" linkTitle="See All" />
         <AnimeList api={topAnime}/>
       </section>
-
-    {/* Newest Anime List */}
-    <section>
-      <Header title="Newest Anime" linkHref="/new" linkTitle="See All" />
-      <AnimeList api={topAnime} />
-    </section>
     </>
   );
 };
