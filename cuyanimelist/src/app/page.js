@@ -1,5 +1,5 @@
 import AnimeList from "@/components/AnimeList";
-import Link from "next/link";
+import Header from "@/components/AnimeList/Header";
 
 const Home = async () => {
 
@@ -7,13 +7,19 @@ const Home = async () => {
   const topAnime = await response.json()
 
   return (
-    <div>
-      <div className="flex justify-between items-center p-5">
-        <h1 className="text-2xl font-bold">Most Popular Anime</h1>
-        <Link href="/populer" className="md:text-xl text-md underline hover:text-indigo-500 transition-all">See All</Link>
-      </div>  
-      <AnimeList api={topAnime}/>
-      </div>
+    <>
+    {/* Most Populer Anime List */}
+      <section>
+        <Header title="Most Popular Anime" linkHref="/popular" linkTitle="See All" />
+        <AnimeList api={topAnime}/>
+      </section>
+
+    {/* Newest Anime List */}
+    <section>
+      <Header title="Newest Anime" linkHref="/new" linkTitle="See All" />
+      <AnimeList api={topAnime} />
+    </section>
+    </>
   );
 };
 
