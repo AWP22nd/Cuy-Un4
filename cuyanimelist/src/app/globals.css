@@ -6,7 +6,7 @@
 *,
 *::before,
 *::after {
-    padding: 2px;
+    padding: 4;
     margin: 0;
     box-sizing: border-box;
 }
