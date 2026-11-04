@@ -1,15 +1,11 @@
-// export default function Page() {
-//     return (
-//         <div>
-//             <h1>Search Page</h1>
-//         </div>
-//     );
-// }
+const Page = async ({ params }) => {
+    const resolvedParams = await params;
 
-const Page = ({ params }) => {
+    console.log(resolvedParams);
+
     return (
         <>
-            <h1>Search Page for : {params.keyword}</h1>
+            <h1>Search Page for : {resolvedParams.keyword}</h1>
             <p>This is the search page.</p>
         </>
     );
