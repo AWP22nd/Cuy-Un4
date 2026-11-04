@@ -1,14 +1,21 @@
+import AnimeList from "@/components/AnimeList";
+import Header from "@/components/AnimeList/Header";
+
 const Page = async ({ params }) => {
-    const resolvedParams = await params;
+  const { keyword } = await params;
 
-    console.log(resolvedParams);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`)
+  const searchAnime = await response.json()
 
-    return (
-        <>
-            <h1>Search Page for : {resolvedParams.keyword}</h1>
-            <p>This is the search page.</p>
-        </>
-    );
+  return (
+    <>
+    {/* Search Results */}
+      <section>
+        <Header title={`Search results for "${keyword}"`} />
+        <AnimeList api={searchAnime}/>
+      </section>
+    </>
+  );
 };
 
 export default Page;
