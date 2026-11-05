@@ -1,12 +1,16 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@theme {
+  --color-primary: #eeeeee;
+  --color-secondary: #393e46;
+  --color-accent: #ffc639;
+  --color-dark: #222831;
+}
 
 *,
 *::before,
 *::after {
-    padding: 4;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
