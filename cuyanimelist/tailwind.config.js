@@ -13,17 +13,12 @@ module.exports = {
       },
     },
     colors: {
-      warna:{
-        primary: '#c05d5d',
-        accent: '#ffc639',
-        secondary: '#393e46',
-        dark: '#222831'
-      },
       // Top-level colors for direct use
-      "warna-primary": "#c05d5d",
-      "warna-accent": "#ffc639",
+      "warna-primary": "#eeeeee",
+      "warna-accent": "#3c00ff",
       "warna-secondary": "#393e46",
-      "warna-dark": "#222831"
+      "warna-dark": "#222831",
+      "warna-warning": "#c41919"
     }
   },
   plugins: [],
