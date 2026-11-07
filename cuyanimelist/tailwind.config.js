@@ -10,15 +10,20 @@ module.exports = {
       backgroundImages: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      }
+      },
     },
     colors: {
-      color:{
-        primary: '#eeeeee',
-        secondary: '#393e46',
+      warna:{
+        primary: '#c05d5d',
         accent: '#ffc639',
-        dark: '#222831',
+        secondary: '#393e46',
+        dark: '#222831'
       },
+      // Top-level colors for direct use
+      "warna-primary": "#c05d5d",
+      "warna-accent": "#ffc639",
+      "warna-secondary": "#393e46",
+      "warna-dark": "#222831"
     }
   },
   plugins: [],
