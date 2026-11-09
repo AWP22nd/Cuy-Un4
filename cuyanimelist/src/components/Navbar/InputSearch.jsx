@@ -9,10 +9,12 @@ const InputSearch = () => {
     const router = useRouter()
 
     const handleSearch = (event) => {
+        const keyword = searchRef.current.value
+
+        if (!keyword) return
 
         if (event.key === "Enter" || event.type === "click") {
             event.preventDefault()
-            const keyword = searchRef.current.value
             router.push(`/search/${keyword}`)
         }
     } 
@@ -20,7 +22,7 @@ const InputSearch = () => {
     return (
         <div className="relative">
             <input placeholder="Search..." className="w-full p-2 rounded" ref={searchRef} onKeyDown={handleSearch} />
-            <button className="absolute top-2 end-3" onClick={handleSearch}>
+            <button className="absolute top-.8 end-2" onClick={handleSearch}>
                 <MagnifyingGlassIcon size={24} />
             </button>
         </div>
