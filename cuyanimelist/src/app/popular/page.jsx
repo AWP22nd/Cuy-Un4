@@ -7,7 +7,7 @@ import AnimeList from '@/components/AnimeList'
 
 const Page = () => {
   const [page, setPage] = useState(1)
-  const [topAnime, setTopAnime] = useState([])
+  const [topAnime, setTopAnime] = useState({ pagination: { last_visible_page: 1 } })
 
   const fetchData = async (page) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}`)
@@ -23,7 +23,7 @@ const Page = () => {
     <>
     <HeaderMenu title={`Popular Anime ${page}`} />
     <AnimeList api={topAnime} />
-    <Pagination />
+    <Pagination page={page} lastPage={topAnime?.pagination?.last_visible_page ?? 1} setPage={setPage} />
     </>
   )
 }
