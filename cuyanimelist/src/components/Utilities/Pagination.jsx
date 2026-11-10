@@ -8,12 +8,12 @@ const Pagination = ({ page, lastPage, setPage }) => {
     }
 
     const handleNextPage = () => {
-        setPage((prevState) => prevState + 1)
+        setPage((prevState) => (prevState >= lastPage ? 1 : prevState + 1))
         scrollToTop()
     }
 
     const handlePreviousPage = () => {
-        setPage((prevState) => prevState - 1)
+        setPage((prevState) => Math.max(prevState - 1, 1))
         scrollToTop()
     }
 
