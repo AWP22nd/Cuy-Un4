@@ -1,5 +1,6 @@
 import { getAnimeResponse } from "@/app/libs/api-libs"
 import Image from "next/image"
+import VideoPlayer from "@/components/Utilities/VideoPlayer"
 
 const Page = async({ params }) => {
     const { id } = await params
@@ -38,6 +39,10 @@ const Page = async({ params }) => {
             width = {250} height={250} className="w-full rounded object-cover"/>
 
             <p className="text-justify text-l">{anime.data.synopsis}</p>
+        </div>
+
+        <div>
+            <VideoPlayer youtubeId={anime.data.trailer.youtube_id}/>
         </div>
         </>
     )
