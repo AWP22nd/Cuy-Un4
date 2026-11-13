@@ -1,6 +1,6 @@
 "use client"
 
-import { XCircleIcon } from "@phosphor-icons/react"
+import { MonitorPlayIcon, XCircleIcon } from "@phosphor-icons/react"
 import { useState } from "react"
 import YouTube from "react-youtube"
 
@@ -19,18 +19,27 @@ const VideoPlayer = ({ youtubeId }) => {
     const Player = () => {
         return (
 
-            <div className="fixed bottom-2 right-2">
-            <button onClick={handleVideoPlayer}
-            className="text-warna-primary float-right hover:text-warna-secondary hover:bg-warna-accent rounded-full transition-colors">
-                <XCircleIcon size={24} />
-            </button>
-            <YouTube videoId={youtubeId} onReady={(event) => event.target.pauseVideo()}
+            <div className="fixed bottom-6 right-6">
+                <button onClick={handleVideoPlayer}
+                className="text-warna-primary float-right bg-warna-accent hover:bg-warna-secondary rounded-full transition-colors">
+                    <XCircleIcon size={28} />
+                </button>
+                <YouTube videoId={youtubeId} onReady={(event) => event.target.pauseVideo()}
                 opts={option}/>
-        </div>
+            </div>
         )
     }
-    return isOpen ? <Player /> : <button className="fixed bottom-5 right-5 w-32 text-warna-primary hover:bg-warna-accent  hover:text-warna-secondary transition-colors rounded p-1" 
-    onClick={handleVideoPlayer}>Open Video</button>
+
+    const ButtonOpenPlayer = () => {
+        return (
+            <button className="fixed bottom-5 right-5 bg-warna-accent text-warna-primary hover:bg-warna-secondary transition-all rounded p-1 shadow-xl" 
+            onClick={handleVideoPlayer}>
+        <MonitorPlayIcon size={28} />
+    </button>
+        )
+    }
+
+    return isOpen ? <Player /> : <ButtonOpenPlayer /> 
 }
 
 export default VideoPlayer
