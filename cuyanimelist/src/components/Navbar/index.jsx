@@ -7,6 +7,7 @@ const Navbar = () => {
             <div className="flex md:flex-row flex-col justify-between md:items-center p-4 gap-2">
                 <Link href="/" className="font-bold text-2xl">Cuy-AnimeList</Link>
                 <InputSearch />
+                <Link href="/api/auth/signin" className="">Sign In</Link>
             </div>
         </header>
     )
