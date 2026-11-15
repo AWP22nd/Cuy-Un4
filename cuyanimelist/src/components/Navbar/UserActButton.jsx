@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { getServerSession } from "next-auth"; 
+import { authUserSession } from "@/libs/auth-libs";
 
 export const UserActButton = async() => {
-    const user =  await getServerSession()
+    const user = await authUserSession();
+    console.log(user)
+
+    const actLabel = user ? "Sign Out" : "Sign In"
+    const actURL = user ? "/api/auth/signout" : "/api/auth/signin"
 
     return (
         <div>
-            <Link href="/api/auth/signin" className="">Sign In</Link>
+            <Link href={actURL} className="">{actLabel}</Link>
         </div>
     )
 }
