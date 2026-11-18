@@ -1,14 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
+import Header from "@/components/dashboard/Header"
 
 const Page = () => {
     return (
-        <section className="mt-4 w-full">
-            <div className="flex justify-between items-center mb-4">
-                <span className="text-warna-primary">BACK</span>
-                <h3 className="text-xl text-warna-primary font-bold">Collections</h3>
-            </div>
-
+        <section className="mt-4 px-6 w-full">
+            <Header title={"My Collections"}/>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Link href="/" className="relative border-2 border-warna-accent">
                 <Image src="" alt="" width={350} height={350} className="w-full"/>
