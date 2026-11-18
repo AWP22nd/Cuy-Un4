@@ -1,12 +1,21 @@
 "use client"
 import { ArrowLeftIcon } from "@phosphor-icons/react"
+import { useRouter } from "next/naviagtion"
 
-const Header =  () => {
+const Header =  ({ title }) => {
+    const router = useRouterer()
+
+    const handleBack = (event) = {
+        event.preventDefault()
+        router.back()
+    }
+
     return (
         <div className="flex justify-between items-center mb-4">
-            <span className="text-warna-primary">
-                <ArrowLeftIcon size={28} />                </span>
-            <h3 className="text-xl text-warna-primary font-bold">Collections</h3>
+            <button className="text-warna-primary" onClick={handleBack}>
+                <ArrowLeftIcon size={28} />
+            </button>
+            <h3 className="text-xl text-warna-primary font-bold">{title}</h3>
         </div>
     )
 }
