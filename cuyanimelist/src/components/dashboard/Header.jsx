@@ -1,11 +1,11 @@
 "use client"
 import { ArrowLeftIcon } from "@phosphor-icons/react"
-import { useRouter } from "next/naviagtion"
+import { useRouter } from "next/navigation"
 
 const Header =  ({ title }) => {
-    const router = useRouterer()
+    const router = useRouter()
 
-    const handleBack = (event) = {
+    const handleBack = (event) => {
         event.preventDefault()
         router.back()
     }
